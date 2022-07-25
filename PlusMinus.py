@@ -1,5 +1,14 @@
 #!/bin/python3
 
+# I/O  1 1 0 -1 -1
+
+# O/P:
+
+# 0.400000
+# 0.400000
+# 0.200000
+
+
 import math
 import os
 import random
