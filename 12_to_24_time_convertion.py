@@ -5,7 +5,11 @@ import os
 import random
 import re
 import sys
-
+ 
+# Sample Input
+# 07:05:45PM
+# Sample Output
+# 19:05:45
 #
 # Complete the 'timeConversion' function below.
 #
@@ -46,3 +50,7 @@ if __name__ == '__main__':
     result = timeConversion(s)
     fptr.write(result + '\n')
     fptr.close()
+
+    
+    
+   
