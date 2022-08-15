@@ -35,10 +35,10 @@ def lonelyinteger(a):
         count_dict[i] = count(a,i)
     print(count_dict)
     for i in count_dict:
-        if(count_dict[i] > 2):
+        if(count_dict[i] >= 2):
             pass
         else:
-            return count_dict[i] 
+            return i 
     
 
 
