@@ -1,37 +1,14 @@
-#!/bin/python3
+from datetime import datetime
 
-import math
-import os
-import random
-import re
-import sys
+# This is an example with inbuild method datetime, it may not work with exam scenarios 
+# input 12:05:00 AM      space after time and AM/PM is mandatory
+#  output: 00:05:00 
 
-#
-# Complete the 'timeConversion' function below.
-#
-# The function is expected to return a STRING.
-# The function accepts STRING s as parameter.
-#
-
-def timeConversion(s):
-    # Write your code here
-    if ("AM" in s):
-        if "12" in s[0:2]:
-            s = '00:'+s[3:8]
-        else:
-            s = s[0:8]
-        s.strip()
-    if "PM" in s:
-        if s[0:2] in "12":
-            s = s[:-2]
-        else:
-            s = str(12+int(s[0:2]))+':'+s[3:8]
-        s.strip()
-    return s
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-    s = input()
-    result = timeConversion(s)
-    fptr.write(result + '\n')
-    fptr.close()
+def convert24(time):
+    # Parse the time string into a datetime object
+    t = datetime.strptime(time, '%I:%M:%S %p')
+    # Format the datetime object into a 24-hour time string
+    return t.strftime('%H:%M:%S')
+ 
+print(convert24('11:21:30 PM'))  # Output: '23:21:30'
+print(convert24('12:12:20 AM'))  # Output: '00:12:20'
