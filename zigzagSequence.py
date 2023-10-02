@@ -1,9 +1,9 @@
 def findZigZagSequence(a, n):
     a.sort()
-    mid = int((n + 1)/2)
-    a[mid-1], a[n-1] = a[n-1], a[mid-1]
+    mid = int((n + 1)/2) - 1
+    a[mid], a[n-1] = a[n-1], a[mid]
 
-    st = mid
+    st = mid + 1
     ed = n - 2
     while(st <= ed):
         a[st], a[ed] = a[ed], a[st]
@@ -15,7 +15,7 @@ def findZigZagSequence(a, n):
             print(a[i])
         else:
             print(a[i], end = ' ')
-    return a
+    return
 
 test_cases = int(input())
 for cs in range (test_cases):
